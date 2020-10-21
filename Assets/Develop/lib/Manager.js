@@ -8,7 +8,7 @@ class Manager extends Employee {
         this.officeNumber = officeNumber;
     }
     // include the new function of get for office number
-    getGithub(){
+    getOfficeNumber(){
         return this.officeNumber;
     }
     // change the employee to "Manager"

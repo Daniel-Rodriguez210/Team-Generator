@@ -1,22 +1,23 @@
 // TODO: Write code to define and export the Employee class
+// Created the parent class with name id and email
 class Employee {
-    constructor(name, email, id){
+    constructor(name, email, id) {
         this.name = name;
-        this.id = id; 
-        this.email = email; 
-        
+        this.id = id;
+        this.email = email;
+
     }
-    
-    getName(){
+    // Get functions 
+    getName() {
         return this.name;
     }
-    getId(){
+    getId() {
         return this.id;
     }
-    getEmail(){
+    getEmail() {
         return this.email;
     }
-    getRole(){
+    getRole() {
         return "Employee";
     }
 
