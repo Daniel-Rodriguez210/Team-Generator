@@ -34,8 +34,14 @@ const render = require("./lib/htmlRenderer");
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
 
-function Employee(name, id, email,) {
-    this.name = name
-    this.id = id
-    this.email = email
+function Employee(name, id, email, position) {
+    this.name = name;
+    this.id = id;
+    this.email = email;
+    this.position = position;
 }
+
+const manager = new Employee("Michael Scott", "1", "michaelscott@dundermifflin.com", "manager")
+const engineer = new Employee("Dwight Shrute", "2", "dwightshrute@dundermifflin.com", "engineer")
+const intern = new Employee("Kevin Malone", "3", "kevinmalone@dundermifflin.com", "intern")
+
