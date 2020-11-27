@@ -49,7 +49,19 @@ inquirer.prompt([
             teamMembersArray.push(addition)
             addAnotherPerson();
         }) 
-}
+};
+
+function addAnotherPerson() {
+    inquirer.prompt([
+        {
+            type: "rawlist",
+            message: "Would you like to add another person to your team?",
+            choices: ["Yes", "No"],
+            name: "newPersonData"
+        }
+    ])
+};
+
 beginProgram();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
