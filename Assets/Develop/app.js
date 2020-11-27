@@ -177,14 +177,16 @@ function addIntern() {
     ])
         .then(function(data) {
             const name = data.name
-            const username = data.username
-            const email = data.email
             const id = data.id
-            const addition = member(name, username, email, id)
+            const email = data.email
+            const school = data.school 
+            const addition = member(name, id, email, school)
             teamMembersArray.push(addition)
             addAnotherPerson()
         })
 };
+
+
 
 beginProgram();
 // After the user has input all employees desired, call the `render` function (required
