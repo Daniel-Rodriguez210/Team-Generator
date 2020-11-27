@@ -3,6 +3,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
+const Employee = require("./lib/Employee");
 
 const teamMembers = []
 
@@ -45,8 +46,8 @@ inquirer.prompt([
             const id = data.id
             const email = data.email 
             const role = data.role
-            const addition = member(name, id, email, role)
-            teamMembersArray.push(addition)
+            const addition = new Employee(name, id, email, role)
+            teamMembers.push(addition)
             addAnotherPerson();
         }) 
 };
@@ -109,8 +110,8 @@ function addAnotherPerson() {
                 const id = data.id
                 const email = data.email
                 const officenumber = data.officenumber
-                const addition = member(name, id, email, officenumber)
-                teamMembersArray.push(addition)
+                const addition = new Manager(name, id, email, officenumber)
+                teamMembers.push(addition)
                 addAnotherPerson()
             })
     } 
@@ -144,8 +145,8 @@ function addEngineer() {
             const username = data.username
             const email = data.email
             const id = data.id
-            const addition = member(name, username, email, id)
-            teamMembersArray.push(addition)
+            const addition = new Engineer(name, username, email, id)
+            teamMembers.push(addition)
             addAnotherPerson()
         })
 };    
@@ -180,11 +181,12 @@ function addIntern() {
             const id = data.id
             const email = data.email
             const school = data.school 
-            const addition = member(name, id, email, school)
-            teamMembersArray.push(addition)
+            const addition = new Intern(name, id, email, school)
+            teamMembers.push(addition)
             addAnotherPerson()
         })
 };
+
 
 
 
