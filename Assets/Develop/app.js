@@ -1,16 +1,17 @@
+const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Employee = require("./lib/Employee");
 
-const teamMembers = []
+
+let teamMembers = [];
 
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-function beginProgram () {
+function Employee () {
 inquirer.prompt([
         {
             /* Questions for person creating the team*/
@@ -32,14 +33,10 @@ inquirer.prompt([
 
         },
         {
-        type: "rawlist",
+        type: "Input",
         message: "What is your Role?",
         name: "Role",
-        choices: [
-            "Manager",
-            "Engineer",
-            "Intern",
-        ]     
+            
     }])
         .then(function (data) {
             const name = data.name
@@ -187,10 +184,12 @@ function addIntern() {
         })
 };
 
+function finishTeam() {
+    console.log(teamMembers)
+};
 
 
-
-beginProgram();
+Employee();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
