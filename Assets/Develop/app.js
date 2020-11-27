@@ -150,6 +150,42 @@ function addEngineer() {
         })
 };    
 
+function addIntern() {
+    inquirer.prompt ([
+        {
+            type: "Input",
+            message: "What is your intern's name?",
+            name: "name"
+        },
+        {
+            type: "Input",
+            message: "What is the intern's ID?",
+            name: "ID"
+    
+        },
+        {
+            type: "Input",
+            message: "What is the intern's email? ",
+            name: "Email"
+        },
+        {
+            type: "Input",
+            message: "What is the intern's school? ",
+            name: "School"
+        }
+        
+    ])
+        .then(function(data) {
+            const name = data.name
+            const username = data.username
+            const email = data.email
+            const id = data.id
+            const addition = member(name, username, email, id)
+            teamMembersArray.push(addition)
+            addAnotherPerson()
+        })
+};
+
 beginProgram();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
