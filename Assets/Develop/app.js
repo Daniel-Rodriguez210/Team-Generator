@@ -56,11 +56,30 @@ function addAnotherPerson() {
         {
             type: "rawlist",
             message: "Would you like to add another person to your team?",
-            choices: ["Yes", "No"],
+            choices: ["Yes, Manager","Yes, Engineer","Yes, Intern", "No"],
             name: "newPersonData"
         }
     ])
-};
+        .then(function(data) {
+            switch(data.newPersonData) {
+                case "Yes, Manager":
+                    addManager();
+                    break;
+                    
+                    case "Yes, Engineer":
+                    addEngineer();
+                    break;
+
+                    case "Yes, Intern":
+                    addIntern();
+                    break;
+
+                    case "No":
+                    finishTeam();
+                    break;
+            }
+        })
+    };
 
 beginProgram();
 // After the user has input all employees desired, call the `render` function (required
