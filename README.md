@@ -12,3 +12,4 @@ The manager is able to add as many team members as he/she chooses.
 
 <img src="SS1.png">
 
+![](2.gif)
