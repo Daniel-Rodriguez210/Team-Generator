@@ -4,17 +4,24 @@ const Employee = require("./Employee");
 
 // I needed to include the parent class calls and the extends with office number added
 class Manager extends Employee {
-    constructor(name, email, id, officeNumber) {
+    constructor(name, id, email, officenumber) {
         super(name, email, id);
-        this.officeNumber = officeNumber;
+        this.officenumber = officenumber;
+        this.role = "Manager"
     }
     // include the new function of get for office number
     getOfficeNumber(){
-        return this.officeNumber;
+        return this.officenumber;
     }
     // change the employee to "Manager"
     getRole(){
-        return "Manager";
+        return this.role;
+    }
+    getId() {
+        return this.id;
+    }
+    getEmail() {
+        return this.email;
     }
 
 }

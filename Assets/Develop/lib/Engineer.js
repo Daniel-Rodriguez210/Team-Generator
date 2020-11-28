@@ -2,18 +2,24 @@
 const Employee = require("./Employee"); 
 // I needed to include the parent class calls and the extends with github added
 class Engineer extends Employee {
-    constructor(name, email, id, github) {
+    constructor(name, email, id, username) {
         super(name, email, id);
-        this.github = github;
-        this.title = "Engineer"
+        this.username = username;
+        this.role = "Engineer"
     }
     // include the new function of get for github
     getGithub(){
-        return this.github;
+        return this.username;
     }
     // change the employee to "engineer
     getRole(){
-        return "Engineer";
+        return this.role;
+    }
+    getId() {
+        return this.id;
+    }
+    getEmail() {
+        return this.email;
     }
 
 }
